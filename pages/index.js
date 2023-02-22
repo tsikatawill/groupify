@@ -1,9 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Container, Modal } from "@/components";
+import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,110 +11,97 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
 
-        <div className={styles.center}>
+      <header className="-mt-8 sm:-mt-12 p-8 sm:p-12 bg-[linear-gradient(rgba(51,65,85,0.5),rgba(51,65,85,0.5),rgba(51,65,85,0.5),rgba(51,65,85,1)),url(/images/hero.webp)] bg-no-repeat bg-cover">
+        <Container extraClasses="grid min-h-[600px] md:min-h-[800px] place-content-center gap-10 justify-items-center text-center">
+          <h1 className="capitalize max-w-4xl text-transparent mx-auto bg-gradient-to-b from-slate-50 to-slate-500 bg-clip-text fill-transparent">
+            Streamline your group projects with Groupify - the effortless way to
+            group teams.
+          </h1>
+
           <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
+            className="border border-slate-500 shadow-lg  rounded-md overflow-hidden"
+            src="/images/heroImg.png"
+            width={600}
+            height={600}
+            alt="example"
           />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
+        </Container>
+      </header>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+      <main>
+        <Container extraClasses="py-10">
+          <h2>How to use</h2>
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
+            temporibus delectus molestiae eaque magnam nostrum saepe nam non
+            voluptates, omnis, quidem doloribus, obcaecati dicta porro
+            recusandae iure harum minus. Voluptatibus!
+          </p>
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum totam
+            assumenda debitis tempore ad dolores, incidunt molestiae delectus
+            rem non et nihil doloribus ullam odio, dolor natus magni quod at!
+            Commodi suscipit quibusdam voluptatum itaque recusandae voluptatibus
+            asperiores sint ducimus natus deleniti laboriosam similique
+            reprehenderit omnis culpa quam excepturi, aperiam eveniet
+            reiciendis, incidunt nobis porro ullam. Iste laudantium voluptates
+            ducimus reprehenderit repellat quam eveniet? Placeat quos beatae
+            similique aperiam, blanditiis recusandae voluptates. Atque numquam
+            doloremque debitis consectetur delectus. Quas, harum. Aliquid
+            sapiente obcaecati earum, in illo ullam ratione itaque? Doloremque
+            quia consequuntur adipisci laborum labore libero. Error eos delectus
+            officia. In commodi vero dolorum laudantium, doloribus animi,
+            adipisci quibusdam architecto eos enim tenetur quos ratione sequi
+            explicabo minima beatae. Voluptatum sit ipsum aspernatur repudiandae
+            dolor laudantium iure odio facere expedita voluptatibus ad optio
+            nihil cumque nemo animi sunt reprehenderit, modi veniam quibusdam.
+            Dolorum itaque magni atque sunt autem consequuntur officia corporis
+            eligendi neque aliquid quasi non sint, quis distinctio mollitia
+            ducimus esse quos cum voluptas? Consectetur quas obcaecati, modi,
+            nulla dolorum et omnis recusandae mollitia soluta exercitationem
+            iure dignissimos hic aperiam ullam quos vero, reprehenderit eligendi
+            ex natus quae blanditiis alias laudantium fugit ipsam. Soluta quam
+            cumque, a dignissimos saepe facere deleniti rerum ducimus placeat
+            deserunt recusandae at aliquid libero ipsum. Placeat quos minus
+            soluta quibusdam in corrupti, nisi libero dignissimos? Vitae
+            provident molestias nulla necessitatibus quos illo aliquid totam
+            saepe hic beatae consequatur enim dolore, facere tempore cupiditate
+            sint illum voluptatibus a ratione? Veritatis deleniti sapiente harum
+            quo maxime odio, amet autem veniam dolore officia nemo accusamus.
+            Accusantium quod porro asperiores, minus maiores culpa harum
+            laudantium ratione, eligendi cumque quisquam quae. Voluptatem quis
+            omnis officia ratione eaque, repellat accusamus vel cupiditate
+            eligendi deleniti harum ex sapiente at sed, ipsa iure minus optio
+            beatae blanditiis vitae repudiandae. Nemo placeat inventore
+            recusandae sunt. Porro aliquam ea eligendi rerum nam facilis impedit
+            voluptatum recusandae ullam, dolores cumque itaque corrupti soluta
+            pariatur maxime, reiciendis saepe perferendis corporis. Beatae
+            assumenda nemo reprehenderit quibusdam ab eius iusto, eum mollitia
+            facilis impedit suscipit maiores fugit, nesciunt neque quae pariatur
+            tempore natus et optio placeat vel amet? Illo natus quae cum neque
+            sit est ullam, hic quia officia dolorem porro nemo veritatis sed
+            cupiditate odio iste blanditiis possimus molestiae explicabo
+            doloribus. Quos, inventore quasi! Voluptates, ea modi, pariatur
+            vitae quos impedit velit, rerum quidem amet magnam eius quae placeat
+            maxime nihil perferendis vero saepe! Velit aut iure cum, eveniet
+            sint fugiat minus suscipit harum omnis rem, ad at ipsa voluptatem
+            optio minima molestias dolores explicabo earum. Aliquid vero
+            deleniti totam sunt adipisci, beatae blanditiis obcaecati cumque
+            exercitationem assumenda natus nam facere saepe vel optio esse
+            corporis recusandae in. Laborum quos nostrum repudiandae deserunt
+            praesentium sunt enim, dignissimos nobis quo animi possimus iste
+            sequi impedit explicabo vitae aliquid necessitatibus molestiae
+            tenetur ratione, debitis consequuntur! Nam porro ab aliquid modi
+            assumenda quos, doloribus voluptatibus maiores dolorem iusto non
+            nisi nulla iure mollitia labore. Doloremque saepe tenetur et cum
+            dolorum perspiciatis labore, id, sit praesentium alias at unde
+            veniam accusantium.
+          </p>
+        </Container>
       </main>
     </>
-  )
+  );
 }
