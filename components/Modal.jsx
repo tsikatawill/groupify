@@ -4,16 +4,6 @@ import { HiX } from "react-icons/hi";
 import { Container } from "./Container";
 
 export const Modal = ({ show, handleClose, children }) => {
-  useEffect(() => {
-    const body = document.querySelector("body");
-    if (show) {
-      body.style.overflowY = "hidden";
-    } else {
-      body.style.overflowX = "hidden";
-      body.style.overflowY = "unset";
-    }
-  }, [show]);
-
   return (
     <div
       className={clsx(
