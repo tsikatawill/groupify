@@ -45,8 +45,7 @@ export const Navbar = () => {
                 key={idx}
                 className={clsx(
                   "capitalize hover:font-medium text-sm sm:text-base",
-                  asPath === route &&
-                    "font-semibold underline underline-offset-8"
+                  asPath === route && "font-bold"
                 )}
               >
                 <Link href={route}>{name}</Link>
