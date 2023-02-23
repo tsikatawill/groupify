@@ -35,10 +35,7 @@ export const Navbar = () => {
       )}
     >
       <Container extraClasses="flex justify-between w-full items-center">
-        <Link
-          href={"/"}
-          className="text-xl sm:text-lg font-bold text-orange-700 flex gap-2 items-center"
-        >
+        <Link href={"/"} className="w-24 sm:w-full">
           <Image src={"/images/logo.png"} alt="logo" width={150} height={50} />
         </Link>
         <div className="flex gap-4 items-center">
