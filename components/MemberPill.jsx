@@ -46,7 +46,7 @@ export const MemberPill = ({ member, handleRemove }) => {
           </button>
 
           <button
-            className="btn gray w-full\"
+            className="btn gray w-full"
             onClick={() => setShowModal(false)}
           >
             Cancel
