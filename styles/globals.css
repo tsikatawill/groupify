@@ -15,7 +15,7 @@
     @apply hover:bg-cyan-400 bg-cyan-600 rounded-full;
   }
   body {
-    @apply bg-slate-700 text-white overflow-x-hidden;
+    @apply bg-slate-700 text-white;
   }
   h1 {
     @apply text-[clamp(2vw,80px,8vw)] font-bold tracking-tight leading-tight md:leading-[clamp(2vw,5rem,20vw)];
