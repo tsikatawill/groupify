@@ -13,7 +13,7 @@ export default function Home() {
             group teams."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.png" />
       </Head>
 
       <header className="-mt-8 sm:-mt-12 p-8 sm:p-12 bg-[linear-gradient(rgba(51,65,85,0.5),rgba(51,65,85,0.5),rgba(51,65,85,0.5),rgba(51,65,85,1)),url(/images/hero.webp)] bg-no-repeat bg-cover">
