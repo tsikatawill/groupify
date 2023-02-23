@@ -19,8 +19,7 @@ export default function Home() {
       <header className="-mt-8 sm:-mt-12 p-8 sm:p-12 bg-[linear-gradient(rgba(51,65,85,0.5),rgba(51,65,85,0.5),rgba(51,65,85,0.5),rgba(51,65,85,1)),url(/images/hero.webp)] bg-no-repeat bg-cover">
         <Container extraClasses="grid min-h-[600px] md:min-h-[800px] place-content-center gap-10 justify-items-center text-center">
           <h1 className="capitalize max-w-4xl text-transparent mx-auto bg-gradient-to-b from-slate-50 to-slate-500 bg-clip-text fill-transparent">
-            Streamline your group projects with Groupify - the effortless way to
-            group teams.
+            Effortless group management with Groupify.
           </h1>
 
           <Image

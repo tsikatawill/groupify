@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 export const AddMembers = () => {
   const [members, setMembers] = useState("");
   const [numOfMembers, setNumOfMembers] = useState(1);
-  const [entryType, setEntryType] = useState("manual");
+  const [entryType, setEntryType] = useState("generated");
   const [prefix, setPrefix] = useState("");
   const [padding, setPadding] = useState(0);
   const [uploading, setUploading] = useState(false);
@@ -57,7 +57,13 @@ export const AddMembers = () => {
       }
       if (validate) {
         addMembers(list);
-        setNumOfMembers(null);
+        toast.success(
+          `Added ${numOfMembers} new ${numOfMembers > 1 ? "members" : "member"}`
+        );
+        // reset form
+        setNumOfMembers(1);
+        setPadding(0);
+        setPrefix("");
       }
     }
   };
@@ -74,15 +80,15 @@ export const AddMembers = () => {
       >
         <h2 className="text-center mb-5">Add Members</h2>
 
-        <div className="flex justify-center mb-5 gap-5">
+        <div className="flex justify-center mb-20 gap-5">
           <select
             value={entryType}
             onChange={(e) => setEntryType(e.target.value)}
             className="select w-fit text-white focus:outline-0  bg-slate-600 focus:bg-slate-800"
           >
-            <option value="manual">Manual entry</option>
             <option value="generated">Generate members</option>
             <option value="file">Upload file</option>
+            <option value="manual">Manual entry</option>
           </select>
         </div>
 
@@ -128,7 +134,6 @@ export const AddMembers = () => {
                 <input
                   type="text"
                   value={prefix}
-                  min={1}
                   onChange={(e) => setPrefix(e.target.value)}
                   placeholder="AH/HIM/19/"
                   className="input"
@@ -148,18 +153,20 @@ export const AddMembers = () => {
               </div>
             </div>
 
-            <span className="col-span-2">
-              Output example:{" "}
-              {prefix.trim() !== ""
-                ? prefix.trim() + String(numOfMembers).padStart(padding, "0")
-                : numOfMembers}
-            </span>
-
+            <div className="col-span-2 h-6 flex items-center">
+              {!!numOfMembers && (
+                <span>
+                  Output example:{" "}
+                  {prefix.trim() !== ""
+                    ? prefix.trim() +
+                      String(numOfMembers).padStart(padding, "0")
+                    : numOfMembers}
+                </span>
+              )}
+            </div>
             <button className="btn primary col-span-2">Add</button>
           </div>
         )}
-
-        {uploading && "Uploading..."}
 
         {!uploading && entryType === "file" && (
           <Dropzone handleSubmit={handleFileSubmit} />
