@@ -1,7 +1,7 @@
 import { AddMembers, Container, MemberGrid, Modal } from "@/components";
 import { useMembers } from "@/context/membersProvider";
 import { FaEraser, FaPrint } from "react-icons/fa";
-import { handleGroup } from "@/lib/utils";
+import { handleGroup, handlePrint } from "@/lib/utils";
 import { GroupUp } from "@/components/Forms/GroupUp";
 import clsx from "clsx";
 import Image from "next/image";
@@ -27,21 +27,31 @@ const Group = () => {
           <div>
             <h2 className="text-center">All Members</h2>
 
-            <div className="flex justify-center w-fit mx-auto items-center gap-4 mb-5 cursor-pointer">
-              <div className="print flex items-center gap-2">
-                <FaPrint size={20} className="text-green-500" />
-                Print
-              </div>
+            {(memberList.length > 0 || groupedList.length > 0) && (
+              <div className="flex justify-center w-fit mx-auto items-center gap-4 mb-5 cursor-pointer">
+                <div
+                  className="print flex items-center gap-2"
+                  onClick={() => {
+                    if (groupedList.length > 0) {
+                      handlePrint(groupedList, true);
+                    } else {
+                      handlePrint(memberList);
+                    }
+                  }}
+                >
+                  <FaPrint size={20} className="text-green-500" />
+                  Print
+                </div>
 
-              <div
-                className="clear flex items-center gap-2"
-                onClick={confirmClear}
-              >
-                <FaEraser size={20} className="text-red-500" />
-                Clear members
+                <div
+                  className="clear flex items-center gap-2"
+                  onClick={confirmClear}
+                >
+                  <FaEraser size={20} className="text-red-500" />
+                  Clear members
+                </div>
               </div>
-            </div>
-
+            )}
             <div className="max-w-lg mx-auto md:max-w-full md:mx-0">
               {groupedList.length > 0 ? (
                 <div
