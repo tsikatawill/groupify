@@ -52,10 +52,6 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-
-          <button className="text-orange-500">
-            <FaLightbulb />
-          </button>
         </div>
       </Container>
     </nav>
