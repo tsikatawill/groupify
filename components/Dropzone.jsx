@@ -1,11 +1,11 @@
 import clsx from "clsx";
-import * as XLSX from "xlsx";
 import { useDropzone } from "react-dropzone";
 import { FaCheckCircle, FaExclamationTriangle, FaUpload } from "react-icons/fa";
 import { handleUploadFile } from "@/lib/utils";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-export const Dropzone = ({ open, handleSubmit }) => {
+export const Dropzone = ({ handleSubmit }) => {
   const validator = (file) => {
     setUploadError("");
     const fileExtension = file.name.split(".").at(-1);
@@ -17,14 +17,10 @@ export const Dropzone = ({ open, handleSubmit }) => {
       };
     }
 
-    if (
-      fileExtension !== "xlsx" &&
-      fileExtension !== "xls" &&
-      fileExtension !== "csv"
-    ) {
+    if (fileExtension !== "xlsx" && fileExtension !== "xls") {
       return {
         code: "invalid-file",
-        message: "Choose a .xlsx, .xls or .csv file",
+        message: "Choose a .xlsx or .xls file",
       };
     }
 
@@ -81,7 +77,9 @@ export const Dropzone = ({ open, handleSubmit }) => {
           } else {
             setUploadError('No column titled "members"');
           }
+
           handleSubmit(membersFromFile);
+          toast.success("Upload success");
         })
         .catch((error) => {
           console.log({ error });
@@ -100,7 +98,7 @@ export const Dropzone = ({ open, handleSubmit }) => {
       <div
         {...getRootProps({
           className: clsx(
-            "max-w-lg border h-40 rounded-md grid place-content-center gap-2 text-white cursor-pointer",
+            "max-w-lg border h-40 sm:h-52 lg:h-60 rounded-md grid place-content-center gap-2 text-white cursor-pointer",
             isDragActive && dragActiveStyles,
             acceptedFiles && !uploadError && acceptedStyles,
             isDragReject || (uploadError && errorStyles)
