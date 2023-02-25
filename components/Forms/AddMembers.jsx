@@ -169,7 +169,15 @@ export const AddMembers = () => {
         )}
 
         {!uploading && entryType === "file" && (
-          <Dropzone handleSubmit={handleFileSubmit} />
+          <>
+            <Dropzone handleSubmit={handleFileSubmit} />
+            <small className="block p-2">
+              Make sure you file your members under a column titled{" "}
+              <span className="text-red-500 font-semibold">
+                &apos;members&apos;
+              </span>
+            </small>
+          </>
         )}
       </form>
     </>
