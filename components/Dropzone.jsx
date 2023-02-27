@@ -74,12 +74,12 @@ export const Dropzone = ({ handleSubmit }) => {
             acceptedFiles.length = 0;
             acceptedFiles.splice(0, acceptedFiles.length);
             inputRef.current.value = "";
+            toast.success("Upload success");
           } else {
             setUploadError('No column titled "members"');
           }
 
           handleSubmit(membersFromFile);
-          toast.success("Upload success");
         })
         .catch((error) => {
           console.log({ error });
