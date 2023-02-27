@@ -52,6 +52,7 @@ const Group = () => {
                 </div>
               </div>
             )}
+
             <div className="max-w-lg mx-auto md:max-w-full md:mx-0">
               {groupedList.length > 0 ? (
                 <div
@@ -104,7 +105,7 @@ const Group = () => {
       </div>
 
       <Modal show={showModal} handleClose={() => setShowModal(false)}>
-        <h3 className="text-red-500">Delete member?</h3>
+        <h3 className="text-red-500">Clear group list?</h3>
 
         <p className="py-2">
           All group members will be removed from the group list
