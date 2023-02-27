@@ -13,15 +13,10 @@ export const GroupUp = ({ handleSubmit }) => {
   });
 
   const validate = () => {
-    if (memberList.length / formData.number) {
-      console.log(
-        parseFloat(memberList.length / formData.number)
-          .toString()
-          .split(".")
-      );
-      // return false;
+    if (memberList.length) {
+      return true;
     }
-    return true;
+    return false;
   };
 
   return (
@@ -99,7 +94,7 @@ export const GroupUp = ({ handleSubmit }) => {
           <FaUsers size={20} />
         </button>
         <button
-          className="btn bg-slate-700 flex items-center col-span-2 justify-center gap-2"
+          className="btn bg-slate-700 hover:bg-slate-600 flex items-center col-span-2 justify-center gap-2"
           type="button"
           onClick={ungroupList}
         >
