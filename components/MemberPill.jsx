@@ -13,13 +13,12 @@ export const MemberPill = ({ member, handleRemove }) => {
   return (
     <>
       <div
-        className={clsx(
-          styles.pill,
-          "tooltip p-2 rounded-md hover:[.member-pill-tooltip:opacity:1] bg-slate-200 relative flex gap-2 items-center cursor-pointer text-black"
-        )}
+        className="p-2 rounded-md bg-slate-200 relative flex gap-2 justify-between items-center cursor-pointer text-black"
         onDoubleClick={confirmDelete}
       >
-        {member}
+        <span className="w-[50%] whitespace-nowrap overflow-ellipsis">
+          {member}
+        </span>
 
         <span className="text-red-500 cursor-pointer" onClick={confirmDelete}>
           <HiOutlineX />
